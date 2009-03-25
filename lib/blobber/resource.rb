@@ -29,7 +29,11 @@ module Blobber
     end
         
     def method_missing(sym, *args, &block)
-      super
+      if attributes.has_key?(sym)
+        attributes[sym]
+      else
+        super
+      end
     end
     
     module ClassMethods

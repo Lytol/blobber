@@ -12,6 +12,15 @@ class ResourceTest < Test::Unit::TestCase
     should "have attributes" do
       assert_equal({:title => "My Document", :path => "/tmp/doc.txt", :collaborators => ["brian","mike"]}, @document.attributes)
     end
+    
+    should "set attributes" do
+      @document.attributes = {:title => "New Title", :path => "/tmp/doc.txt", :collaborators => ["brian","mike"]}
+      assert_equal "New Title", @document.attributes[:title]
+    end
+    
+    should "access attribute values by named methods" do
+      assert_equal @document.attributes[:title], @document.title
+    end
   end
   
 end
