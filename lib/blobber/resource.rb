@@ -1,3 +1,5 @@
+require 'uuidtools'
+
 module Blobber
   
 =begin rdoc
@@ -9,23 +11,36 @@ module Blobber
     
     def self.included(base)
       base.extend(ClassMethods)
+      base.class_eval do
+        attr_reader :uuid
+      end
     end
     
     
     def initialize(attrs = {})
+      @new_record = true
+      @uuid = UUID.random_create.to_s
       self.attributes = attrs
     end
     
-    def save
-      
-    end
-    
     def attributes
-      @attributes ||= []
+      @attributes ||= {}
     end
     
     def attributes=(attrs)
       @attributes = attrs
+    end
+    
+    def save
+      if Blobber.connection.set(uuid, attributes.to_json)
+        @new_record = false
+        return true
+      end
+      false
+    end
+    
+    def new_record?
+      @new_record
     end
         
     def method_missing(sym, *args, &block)
@@ -36,12 +51,6 @@ module Blobber
       end
     end
     
-    module ClassMethods
-      
-      def find(uuid)
-        
-      end
-      
-    end
+    module ClassMethods; end
   end
 end
