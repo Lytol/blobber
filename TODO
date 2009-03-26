@@ -1,0 +1,2 @@
+* Let users specify a key rather than having to use an auto-generated uuid
+* Allow configuration of hosts (multiple, hostname+port)
