@@ -9,6 +9,7 @@ begin
     gem.email = "bsmith@swig505.com"
     gem.homepage = "http://github.com/Lytol/blobber"
     gem.authors = ["Brian Smith"]
+    gem.add_dependency('json', '>= 1.1.3')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError

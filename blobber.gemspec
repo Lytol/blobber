@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-03-25}
   s.email = %q{bsmith@swig505.com}
   s.extra_rdoc_files = ["README.md", "LICENSE"]
-  s.files = ["README.md", "VERSION.yml", "lib/blobber", "lib/blobber/resource.rb", "lib/blobber.rb", "test/blobber_test.rb", "test/test_helper.rb", "LICENSE"]
+  s.files = ["README.md", "VERSION.yml", "lib/blobber", "lib/blobber/resource.rb", "lib/blobber/utils.rb", "lib/blobber.rb", "test/benchmark", "test/integration", "test/test_helper.rb", "test/unit", "test/unit/resource_test.rb", "LICENSE"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/Lytol/blobber}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
@@ -22,8 +22,11 @@ Gem::Specification.new do |s|
     s.specification_version = 2
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<json>, [">= 1.1.3"])
     else
+      s.add_dependency(%q<json>, [">= 1.1.3"])
     end
   else
+    s.add_dependency(%q<json>, [">= 1.1.3"])
   end
 end

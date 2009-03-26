@@ -1,6 +1,7 @@
-require 'json'
 require 'memcache'
+require 'json'
 
+require 'blobber/utils'
 require 'blobber/resource'
 
 
