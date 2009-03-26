@@ -123,4 +123,17 @@ class ResourceTest < Test::Unit::TestCase
     end
   end
   
+  context "Destroying a blobber" do
+    setup do
+      Blobber.connection.stubs(:set).returns(true)
+      @document = Document.new(Document::DEFAULT_ATTRIBUTES)
+      @document.save
+      Blobber.connection.expects(:delete).with(@document.key).returns(true)
+    end
+    
+    should "return true" do
+      assert @document.destroy
+    end
+  end
+  
 end

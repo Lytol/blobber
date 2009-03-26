@@ -40,6 +40,11 @@ module Blobber
       false
     end
     
+    def destroy
+      return false if new_record?
+      Blobber.connection.delete(key)
+    end
+    
     def new_record?
       @new_record
     end
