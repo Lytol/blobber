@@ -1,5 +1,9 @@
-require 'memcache'
-require 'json'
+begin
+  require 'memcache'
+rescue LoadError
+  puts "You must install a Ruby memcached client library (ex: sudo gem install memcache-client)"
+  exit
+end
 
 require 'blobber/utils'
 require 'blobber/resource'

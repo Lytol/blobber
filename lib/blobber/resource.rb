@@ -1,4 +1,5 @@
 require 'uuidtools'
+require 'json'
 
 module Blobber
   

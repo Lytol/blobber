@@ -1,7 +1,7 @@
 Blobber
 =======
 
-Description goes here.
+Blobber is an 
 
 Installation
 ------------
@@ -11,6 +11,18 @@ Installation
 * uuidtools gem (1.0.7)
 * json gem (1.1.3)
 * memcache-client (or equivalent) gem
+
+
+Running Benchmarks
+------------------
+
+1) Start memcachedb with a fresh db directory:
+
+    sudo memcachedb -d -r -u root -H /var/db/bdb/test1 -N
+
+2) Run the benchmarks:
+
+    rake benchmark
 
 
 Copyright
