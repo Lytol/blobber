@@ -1,7 +1,8 @@
 Blobber
 =======
 
-Blobber is an 
+An ORM-like abstraction layer for CRUDing data in memcachedb
+
 
 Installation
 ------------
@@ -18,7 +19,7 @@ Running Benchmarks
 
 1) Start memcachedb with a fresh db directory:
 
-    sudo memcachedb -d -r -u root -H /var/db/bdb/test1 -N
+    sudo memcachedb -r -u root -H /var/db/bdb/test1 -N
 
 2) Run the benchmarks:
 
