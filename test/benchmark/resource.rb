@@ -6,7 +6,8 @@ require 'blobber'
 
 class Document; include Blobber::Resource; end
 
-sample_size = ARGV[1] || 10000
+sample_size = (ENV['SAMPLE_SIZE'] || '10000').to_i
+puts "Sample: #{sample_size.inspect}"
 document = Document.new(:name => "Sample Document")
 
 puts "Resource Benchmark (sample size: #{sample_size})\n\n"

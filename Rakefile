@@ -46,7 +46,7 @@ rescue LoadError
   end
 end
 
-desc "Run performance benchmarks"
+desc "Run performance benchmarks (optionally use SAMPLE_SIZE)"
 task :benchmark do
   Dir['test/benchmark/*.rb'].each { |f| load f }
 end
