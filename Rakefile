@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "blobber"
-    gem.summary = %Q{An ORM-like abstraction layer for CRUDing objects to any db supporting the memcached protocol (memcachedb, Tokyo Tyrant, etc)}
+    gem.summary = %Q{An abstraction layer for CRUDing objects to any key/value storage supporting the memcached protocol (memcachedb, Tokyo Tyrant, etc)}
     gem.email = "bsmith@swig505.com"
     gem.homepage = "http://github.com/Lytol/blobber"
     gem.authors = ["Brian Smith"]

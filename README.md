@@ -1,7 +1,7 @@
 Blobber
 =======
 
-An ORM-like abstraction layer for CRUDing objects to any db supporting the memcached protocol (memcachedb, Tokyo Tyrant, etc)
+An abstraction layer for CRUDing objects to any key/value storage supporting the memcached protocol (memcachedb, Tokyo Tyrant, etc)
 
 
 Installation
@@ -20,9 +20,9 @@ Running Benchmarks
 1) Start memcachedb (or your db of choice):
 
     sudo memcachedb -r -u root -H /var/db/bdb/test1 -N
-    <or>
+      -or-
     sudo ttserver -port 21201 /var/db/bdb/test.tch
-    <or>
+      -or-
     sudo ttserver -port 21201 /var/db/bdb/test.tcb
 
 2) Run the benchmarks:
